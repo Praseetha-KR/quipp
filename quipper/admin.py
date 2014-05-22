@@ -1,3 +1,7 @@
 from django.contrib import admin
+from quipper.models import Poll
 
-# Register your models here.
+class PollAdmin(admin.ModelAdmin):
+	fields = ['pub_date', 'question']
+
+admin.site.register(Poll, PollAdmin)
